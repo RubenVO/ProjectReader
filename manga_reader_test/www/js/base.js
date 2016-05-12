@@ -23,7 +23,7 @@
     *   x: {pageId: x, url: "imgLink"}
     *   where x is array index
     *
-    *   TODO: -make temp buttons dissapear when regarding
+    *   TODO: -make temp buttons dissapear when reading
     *         -create back button
     */
     $("#getChapter").click(function(){
