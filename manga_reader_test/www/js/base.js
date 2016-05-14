@@ -10,7 +10,7 @@
     //global variables
     var chapterObject;
     var source = "mangafox.me";
-    var manga = "naruto";
+    var manga = localStorage.mangaId;
     var chapter = 1;
     var currentPage;
 
@@ -26,8 +26,8 @@
     *   TODO: -make temp buttons dissapear when reading
     *         -create back button
     */
-    $("#getChapter").click(function(){
-      console.log("you clicked the getChapter button!");
+    $(document).ready(function(){
+      console.log("doc ready!");
       $.ajax({
         beforeSend: function(request){
           request.setRequestHeader("X-Mashape-Key", "9bF2fE4br2mshOohWmEcxGeC38Jgp1toGPLjsnWzUL3hxxWvxm");
@@ -37,7 +37,7 @@
         success: function(json){
           chapterObject = json;
           console.log(chapterObject);
-          $("#imgdiv").prepend("<img src='" + chapterObject.pages[0].url + "' />")
+          $("#imgdiv").append("<img src='" + chapterObject.pages[0].url + "' />")
           currentPage = 1;
         }
       });
