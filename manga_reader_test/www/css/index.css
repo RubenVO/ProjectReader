@@ -1,0 +1,167 @@
+/*  0000000    0     0    0000000    0000000    0000000    0     0
+    0          0     0    0             0       0     0    00   00
+    0          0     0    0000000       0       0     0    0 0 0 0
+    0          0     0          0       0       0     0    0  0  0
+    0000000    0000000    0000000       0       0000000    0     0
+*/
+@font-face {
+    font-family: "MangaFont";
+    src: url(../fonts/animeace2_reg.ttf) format("truetype");
+}
+
+body{
+  height: 100%;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+
+
+}
+/*
+#imgdiv:nth-child(even){
+  width: 125px;
+  height: 200px;
+  margin-left: auto;
+  margin-top: 25px;
+  margin-right: 35px;
+  margin-bottom: 25px;
+  float: right;
+  overflow: hidden;
+  position: relative;
+  border-style: solid;
+  border-width: 3px;
+  border-color: white;
+  box-shadow: 5px 5px 5px black;
+}
+*/
+
+#header{
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  background: black;
+  top:0px;
+  z-index: 10;
+}
+
+#searchCombo{
+  margin: auto auto;
+  width: 233px;
+  height: 100%;
+}
+
+#searchBox{
+  margin:0;
+  border:none;
+  padding:none;
+  float:left;
+  height: 48px;
+  font-size: 18px;
+  max-width: 165px;
+  border-left:4px solid white;
+  font-family: Roboto, Verdana, Tahoma;
+  outline: none;
+}
+
+#search{
+  border:none;
+  padding:none;
+  float:left;
+  height: 50px;
+  font-family: Roboto, Verdana, Tahoma;
+  background-color: white;
+  outline: none;
+}
+
+#mangaThumbnails{
+  margin-top: 50px;
+  padding-bottom: 50px;
+  z-index: 1;
+}
+
+#imgdiv{
+  width: 125px;
+  height: 200px;
+  margin: 24px;
+  overflow: hidden;
+  position: relative;
+  border-style: solid;
+  float: left;
+  border-width: 3px;
+  border-color: white;
+  box-shadow: 5px 5px 5px black;
+}
+
+#imgdiv:last-child{
+  margin-bottom: 64px;
+}
+
+img{
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  width: auto;
+  height: 200px;
+  margin: auto;
+}
+
+#nothing{
+  font-family: Impact;
+  font-size: 50px;
+  margin: auto auto;
+}
+
+#pageButtons{
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  margin: auto auto 0 auto;
+  bottom: 0px;
+  z-index: 10;
+}
+
+#pageButtons #nextPage{
+  line-height: 50px;
+  border: none;
+  float: left;
+  width: 33.33%;
+  height: 100%;
+  color: white;
+  border-left: 3px solid white;
+  background: black;
+  font-family: Roboto, Verdana, Tahoma;
+  font-size: 30px;
+  margin: auto;
+  outline: none;
+}
+
+#pageButtons #previousPage{
+  line-height: 50px;
+  border: none;
+  float: left;
+  width: 33.33%;
+  height: 100%;
+  color: white;
+  border-right: 3px solid white;
+  background: black;
+  font-family: Roboto, Verdana, Tahoma;
+  font-size: 30px;
+  margin: auto;
+  outline: none;
+}
+
+#pageButtons #currentPage{
+  line-height: 50px;
+  border: none;
+  float: left;
+  width: 33.33%;
+  height: 100%;
+  color: white;
+  background: black;
+  font-family: Roboto, Verdana, Tahoma;
+  font-size: 30px;
+  text-align: center;
+  margin: auto;
+  outline: none;
+}
