@@ -2,7 +2,7 @@
 
   var mangaListObject;
   var source = "mangareader.net";
-  var page = 0;
+  var page = localStorage.indexPage;
   var searchVal;
 
   $(document).ready(function(){
@@ -17,12 +17,12 @@
         mangaListObject = json;
         console.log(mangaListObject);
         $("#currentPage").empty();
-        $("#currentPage").append(page + 1);
+        $("#currentPage").append(parseInt(localStorage.indexPage) + 1);
         $.each(mangaListObject, function(index, element){
 
           //console.log(index);
 
-          if(index > ((-1) + (page * 10)) && index < (10 + (page * 10))){
+          if(index > ((-1) + (parseInt(localStorage.indexPage) * 10)) && index < (10 + (parseInt(localStorage.indexPage) * 10))){
             $("#mangaThumbnails").append("<div id='imgdiv'> <img id='" + element.mangaId + "' src='" + element.cover + "'/></div>");
           }
 
@@ -61,13 +61,17 @@
         if($.isEmptyObject(mangaListObject)){
 
           $("#mangaThumbnails").append("<div id='nothing'>GET CUCKED</div>");
+          localStorage.indexPage = 0;
 
         }else{
           $.each(mangaListObject, function(index, element){
 
             //console.log(index);
+            localStorage.indexPage = 0;
+            $("#currentPage").empty();
+            $("#currentPage").append(parseInt(localStorage.indexPage) + 1);
 
-            if(index > ((-1) + (page * 10)) && index < (10 + (page * 10))){
+            if(index > ((-1) + (parseInt(localStorage.indexPage) * 10)) && index < (10 + (parseInt(localStorage.indexPage) * 10))){
               $("#mangaThumbnails").append("<div id='imgdiv'> <img id='" + element.mangaId + "' src='" + element.cover + "'/></div>");
             }
           });
@@ -81,38 +85,38 @@
   $("#nextPage").on("click", function(){
     if(mangaListObject.length > 10){
       $("#mangaThumbnails").empty();
-      page+=1;
+      localStorage.indexPage = parseInt(localStorage.indexPage)+1;
 
       $.each(mangaListObject, function(index, element){
 
         //console.log(index);
 
-        if(index > ((-1) + (page * 10)) && index < (10 + (page * 10))){
+        if(index > ((-1) + (parseInt(localStorage.indexPage) * 10)) && index < (10 + (parseInt(localStorage.indexPage) * 10))){
           $("#mangaThumbnails").append("<div id='imgdiv'> <img id='" + element.mangaId + "' src='" + element.cover + "'/></div>");
         }
       });
       $("#currentPage").empty();
-      $("#currentPage").append(page + 1);
+      $("#currentPage").append(parseInt(localStorage.indexPage) + 1);
     }
   });
 
 
 
   $("#previousPage").on("click", function(){
-    if(mangaListObject.length > 10 && page != 0){
+    if(mangaListObject.length > 10 && parseInt(localStorage.indexPage) != 0){
       $("#mangaThumbnails").empty();
-      page-=1;
+      localStorage.indexPage = parseInt(localStorage.indexPage)-1;
 
       $.each(mangaListObject, function(index, element){
 
         //console.log(index);
 
-        if(index > ((-1) + (page * 10)) && index < (10 + (page * 10))){
+        if(index > ((-1) + (parseInt(localStorage.indexPage) * 10)) && index < (10 + (parseInt(localStorage.indexPage) * 10))){
           $("#mangaThumbnails").append("<div id='imgdiv'> <img id='" + element.mangaId + "' src='" + element.cover + "'/></div>");
         }
       });
       $("#currentPage").empty();
-      $("#currentPage").append(page + 1);
+      $("#currentPage").append(parseInt(localStorage.indexPage) + 1);
     }
   });
 

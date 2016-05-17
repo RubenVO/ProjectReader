@@ -105,7 +105,7 @@ img{
 
 #chapterName{
   float: left;
-  max-width: 80%;
+  width: 80%;
   max-height: 50px;
   overflow: hidden;
 }
